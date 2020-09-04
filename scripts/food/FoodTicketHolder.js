@@ -5,7 +5,7 @@ export const FoodTicketHolder = () => {
     eventHub.addEventListener("foodTicketPurchased", customEvent => {
         if ("foodId" in customEvent.detail) {
             contentTarget.innerHTML += `
-            <div class="person food"></div>
+            <div class="person eater"></div>
             `
         }
     })
