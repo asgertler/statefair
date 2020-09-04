@@ -6,9 +6,18 @@ const sideshowTarget = document.querySelector(".sideshow")
 
 export const FullPackageTicketHolder = () => {
     eventHub.addEventListener("fullPackageTicketPurchased", customEvent => {
-        if ("sideshowId" in customEvent.detail) {
-            contentTarget.innerHTML += `
-            <div class="person gawker"></div>
+        if ("fullPackageId" in customEvent.detail) {
+            ridesTarget.innerHTML += `
+            <div class="person bigSpender"></div>
+            `,
+                foodTarget.innerHTML += `
+            <div class="person bigSpender"></div>
+            `,
+                gamesTarget.innerHTML += `
+            <div class="person bigSpender"></div>
+            `,
+                sideshowTarget.innerHTML += `
+            <div class="person bigSpender"></div>
             `
         }
     })
