@@ -2,17 +2,17 @@
 const eventHub = document.querySelector("#state-fair")
 const contentTarget = document.querySelector('.customers')
 
-export const TicketCount = () => {
-    let tickets = 0
-    contentTarget.innerHTML = `Total tickets purchased: ${tickets}`
+let tickets = 0
+contentTarget.innerHTML = `Total tickets purchased: ${tickets}`
 
-    /* eventHub.addEventListener("ticketPurchased", customEvent => {
-        if ("sideshowId" in customEvent.detail) {
-            contentTarget.innerHTML += `
-            <div class="person gawker"></div>
-            `
+export const TicketCount = () => {
+    eventHub.addEventListener("click", event => {
+        if (event.target.tagName === 'BUTTON') {
+            tickets++
         }
-    }) */
+
+        contentTarget.innerHTML = `Total tickets purchased: ${tickets}`
+    })
 }
 
 /*
