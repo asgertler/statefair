@@ -38,8 +38,9 @@ h1,h2,h3,h4,h5,h6 {
 
 .people {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
     height: 25rem;
 }
 
